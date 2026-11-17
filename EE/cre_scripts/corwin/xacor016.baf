@@ -18,7 +18,6 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_CorwinLearnedRestring", "GLOBAL", 3)
-			Continue()
 	END
 
 	IF

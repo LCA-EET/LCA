@@ -15,7 +15,7 @@
 	END
 
 	IF
-		SetGlobal("XA_LC_SarevokSoul", "GLOBAL", 1)
+		Global("XA_LC_SarevokSoul", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
 			Interact("Sarevok")
@@ -57,7 +57,6 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_CorwinParentAdvice", "GLOBAL", 2)
-			Continue()
 	END
 
 	IF
@@ -79,24 +78,16 @@
 			GlobalTimerExpired("XA_LC_CorwinPregnantTimer", "GLOBAL")
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
+			PlaySong(1001)
 			SetGlobal("XA_LC_PregnantOverride", "GLOBAL", 2)
-			SetGlobalTimer("XA_LC_OneRoundTimer", "LOCALS", ONE_ROUND)
 			SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 2)
-			SetInterrupt(TRUE)
-			Continue()
 	END
 
 	IF
-		GlobalTimerExpired("XA_LC_OneRoundTimer", "LOCALS")
 		Global("XA_LC_CorwinPregnant", "GLOBAL", 2)
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
-			PlaySong(1001)
-			//Dialog J-71
 			StartDialog("xacor25j", Player1)
-			SetInterrupt(TRUE)
 	END
 	//}
 	
@@ -109,10 +100,10 @@
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 4)
+			PlaySong(1009)
 			DisplayStringHead(Myself, @0)
+			SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 4)
 			SetInterrupt(TRUE)
-			Continue()
 	END
 	
 	IF
@@ -131,11 +122,7 @@
 		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
-			PlaySong(1009)
-			SmallWait(5)
 			StartDialog("xacor25j", Player1)
-			SetInterrupt(TRUE)
 	END
 	//}
 	
@@ -150,9 +137,8 @@
 			GlobalTimerExpired("XA_LC_C3Timer", "LOCALS")
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 6)
 			PlaySong(1003)
-			Continue()
+			SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 6)
 	END
 	
 	IF
@@ -172,12 +158,15 @@
 		GlobalTimerExpired("XA_LC_CorwinPregnantTimer", "GLOBAL")
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
-			SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 8)
 			PlaySong(1001)
-			SmallWait(5)
+			SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 8)
+	END
+
+	IF
+		Global("XA_LC_CorwinPregnant", "GLOBAL", 8)
+	THEN
+		RESPONSE #100
 			StartDialog("xacor25j", Player1)
-			SetInterrupt(TRUE)
 	END
 	//}
 	
@@ -189,8 +178,8 @@
 		GlobalTimerExpired("XA_LC_CorwinPregnantTimer", "GLOBAL")
 	THEN
 		RESPONSE #100
+			PlaySong(1001)
 			SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 10)
-			Continue()
 	END
 	
 	IF
@@ -200,11 +189,7 @@
 		AreaCheck("AR4500")
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
-			PlaySong(1001)
-			SmallWait(5)
 			StartDialog("xacor25j", Player1)
-			SetInterrupt(TRUE)
 	END
 	//}
 	
@@ -218,11 +203,7 @@
 		IsValidForPartyDialogue("Imoen2")
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinPregBabyName_Imoen", "GLOBAL", 1)
-			////DisplayStringHead(Myself, ~C~)
-			SetInterrupt(TRUE)
-			Continue()
 	END
 	
 	IF
@@ -234,10 +215,7 @@
 		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
-			//Dialog J-73
-			SetInterrupt(FALSE)
 			ActionOverride("Imoen2", StartDialog("IMOEN25J", Player1))
-			SetInterrupt(TRUE)
 	END
 	//}
 	
@@ -252,11 +230,8 @@
 		InParty(Myself)
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			SetGlobalTimer("XA_LC_CorwinPregnantAerieTimer", "GLOBAL", TWO_DAYS)
 			SetGlobal("XA_LC_CorwinPregAerieTimerSet", "GLOBAL", 1)
-			SetInterrupt(TRUE)
-			Continue()
 	END
 	
 	IF
@@ -269,11 +244,14 @@
 		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinPregBabyName_Aerie", "GLOBAL", 1)
-			//Dialog J-74
+	END
+
+	IF
+		Global("XA_LC_CorwinPregBabyName_Aerie", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
 			ActionOverride("Aerie", StartDialog("AERIE25J", Player1))
-			SetInterrupt(TRUE)
 	END
 	//}
 	
@@ -288,11 +266,8 @@
 		InParty(Myself)
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			SetGlobalTimer("XA_LC_CorwinPregnantJahTimer", "GLOBAL", TWO_DAYS)
 			SetGlobal("XA_LC_CorwinPregnantJahTimerSet", "GLOBAL", 1)
-			SetInterrupt(TRUE)
-			Continue()
 	END
 	
 	IF
@@ -304,11 +279,14 @@
 		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinPregnantBabyName_Jah", "GLOBAL", 1)
-			//Dialog J-75
+	END
+
+	IF
+		Global("XA_LC_CorwinPregnantBabyName_Jah", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
 			ActionOverride("Jaheira", StartDialog("JAHEI25J", Player1))
-			SetInterrupt(TRUE)
 	END
 	//}
 //}

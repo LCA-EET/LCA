@@ -859,12 +859,25 @@ IF ~~ THEN BEGIN XAA50
 	SAY @279  /* ~Hah, how could anyone forget. I miss our colleagues from the coalition as well... even that prick de Lancie. Hopefully they're doing well.~ */
 	
 	IF ~
+		GlobalLT("XA_LC_AnythingElse48", "LOCALS", 1)
 		OR(3)
 			!Global("XA_LC_AskedAboutFirstMeeting", "LOCALS", 1)
 			!Global("XA_LC_AskedAboutAvernus", "LOCALS", 1)
 			!Global("XA_LC_AskedAboutRefugees", "LOCALS", 1)
 	~ THEN REPLY @280 /* ~Yes, I hope so too. I have a feeling we'll run into them again, sooner or later.~ */
+	DO ~
+		SetGlobal("XA_LC_AnythingElse48", "LOCALS", 1)
+	~
 	GOTO XAA48A //OK
+
+	IF ~
+		Global("XA_LC_AnythingElse48", "LOCALS", 1)
+		OR(3)
+			!Global("XA_LC_AskedAboutFirstMeeting", "LOCALS", 1)
+			!Global("XA_LC_AskedAboutAvernus", "LOCALS", 1)
+			!Global("XA_LC_AskedAboutRefugees", "LOCALS", 1)
+	~ THEN REPLY @280 /* ~Yes, I hope so too. I have a feeling we'll run into them again, sooner or later.~ */
+	GOTO XAA48B //OK
 	
 	IF ~
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
@@ -905,12 +918,25 @@ IF ~~ THEN BEGIN XAA52
 	SAY @907 /* ~Perhaps he is. I'm grateful for his sacrifice. I can't imagine the heartbreak he felt watching his niece pledge herself to a devil like Belhifet.~ */
 	
 	IF ~
+		GlobalLT("XA_LC_AnythingElse48", "LOCALS", 1)
 		OR(3)
 			!Global("XA_LC_AskedAboutFirstMeeting", "LOCALS", 1)
 			!Global("XA_LC_AskedAboutDSFriends", "LOCALS", 1)
 			!Global("XA_LC_AskedAboutRefugees", "LOCALS", 1)
 	~ THEN REPLY @281  /* ~Indeed. I too am grateful.~ */
-	GOTO XAA48A //OK
+	DO ~
+		SetGlobal("XA_LC_AnythingElse48", "LOCALS", 1)
+	~
+	GOTO XAA48A //OK//OK
+
+	IF ~
+		Global("XA_LC_AnythingElse48", "LOCALS", 1)
+		OR(3)
+			!Global("XA_LC_AskedAboutFirstMeeting", "LOCALS", 1)
+			!Global("XA_LC_AskedAboutDSFriends", "LOCALS", 1)
+			!Global("XA_LC_AskedAboutRefugees", "LOCALS", 1)
+	~ THEN REPLY @281  /* ~Indeed. I too am grateful.~ */
+	GOTO XAA48B //OK//OK
 	
 	IF ~
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
@@ -934,12 +960,25 @@ END
 IF ~~ THEN BEGIN XAA53
 	SAY @906 /* ~Perhaps she is. But it doesn't matter. I don't think we'll need to worry about her ever again.~ */
 	IF ~
+		GlobalLT("XA_LC_AnythingElse48", "LOCALS", 1)
 		OR(3)
 			!Global("XA_LC_AskedAboutFirstMeeting", "LOCALS", 1)
 			!Global("XA_LC_AskedAboutDSFriends", "LOCALS", 1)
 			!Global("XA_LC_AskedAboutRefugees", "LOCALS", 1)
 	~ THEN REPLY @187 /* ~I hope you're right.~ */
-	GOTO XAA48A //OK
+	DO ~
+		SetGlobal("XA_LC_AnythingElse48", "LOCALS", 1)
+	~
+	GOTO XAA48A 
+	
+	IF ~
+		Global("XA_LC_AnythingElse48", "LOCALS", 1)
+		OR(3)
+			!Global("XA_LC_AskedAboutFirstMeeting", "LOCALS", 1)
+			!Global("XA_LC_AskedAboutDSFriends", "LOCALS", 1)
+			!Global("XA_LC_AskedAboutRefugees", "LOCALS", 1)
+	~ THEN REPLY @187 /* ~I hope you're right.~ */
+	GOTO XAA48B
 	
 	IF ~
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
@@ -992,12 +1031,25 @@ IF ~~ THEN BEGIN XAA55
 	SAY @913 /* ~I'll take your words over roses, any day.~ */
 	
 	IF ~
+		GlobalLT("XA_LC_AnythingElse48", "LOCALS", 1)
 		OR(3)
 			!Global("XA_LC_AskedAboutAvernus", "LOCALS", 1)
 			!Global("XA_LC_AskedAboutDSFriends", "LOCALS", 1)
 			!Global("XA_LC_AskedAboutRefugees", "LOCALS", 1)
 	~ THEN REPLY @915 /* ~(You share a warm embrace)~ */
-	GOTO XAA48A	//OK
+	DO ~
+		SetGlobal("XA_LC_AnythingElse48", "LOCALS", 1)
+	~
+	GOTO XAA48A 
+
+	IF ~
+		Global("XA_LC_AnythingElse48", "LOCALS", 1)
+		OR(3)
+			!Global("XA_LC_AskedAboutAvernus", "LOCALS", 1)
+			!Global("XA_LC_AskedAboutDSFriends", "LOCALS", 1)
+			!Global("XA_LC_AskedAboutRefugees", "LOCALS", 1)
+	~ THEN REPLY @915 /* ~(You share a warm embrace)~ */
+	GOTO XAA48B 
 	
 	IF ~
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
@@ -1022,12 +1074,25 @@ IF ~~ THEN BEGIN XAA56
 	SAY @919 /* ~The beginnings of a long and fruitful friendship, one that I hope will last well into the future.~ */
 	
 	IF ~
+		GlobalLT("XA_LC_AnythingElse48", "LOCALS", 1)
 		OR(3)
 			!Global("XA_LC_AskedAboutAvernus", "LOCALS", 1)
 			!Global("XA_LC_AskedAboutDSFriends", "LOCALS", 1)
 			!Global("XA_LC_AskedAboutRefugees", "LOCALS", 1)
 	~ THEN REPLY @920 /* ~As do I, my friend.~ */
-	GOTO XAA48A	//OK
+	DO ~
+		SetGlobal("XA_LC_AnythingElse48", "LOCALS", 1)
+	~
+	GOTO XAA48A 
+
+	IF ~
+		Global("XA_LC_AnythingElse48", "LOCALS", 1)
+		OR(3)
+			!Global("XA_LC_AskedAboutAvernus", "LOCALS", 1)
+			!Global("XA_LC_AskedAboutDSFriends", "LOCALS", 1)
+			!Global("XA_LC_AskedAboutRefugees", "LOCALS", 1)
+	~ THEN REPLY @920 /* ~As do I, my friend.~ */
+	GOTO XAA48B 
 	
 	IF ~
 		OR(3)
@@ -1088,16 +1153,56 @@ IF ~~ THEN BEGIN XAA48A
 	EXIT
 END
 
+IF ~~ THEN BEGIN XAA48B
+	SAY @2240 /* ~Anything else?~ */
+	
+	COPY_TRANS XACORWIB XAA48
+	
+	IF ~
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		OR(4)
+			Global("XA_LC_AskedAboutFirstMeeting", "LOCALS", 1)
+			Global("XA_LC_AskedAboutAvernus", "LOCALS", 1)
+			Global("XA_LC_AskedAboutDSFriends", "LOCALS", 1)
+			Global("XA_LC_AskedAboutRefugees", "LOCALS", 1)
+	~ THEN REPLY @730 /* ~That's enough reminiscing, for now. Let's get going, love.~ */
+	EXIT
+	
+	IF ~
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		OR(4)
+			Global("XA_LC_AskedAboutFirstMeeting", "LOCALS", 1)
+			Global("XA_LC_AskedAboutAvernus", "LOCALS", 1)
+			Global("XA_LC_AskedAboutDSFriends", "LOCALS", 1)
+			Global("XA_LC_AskedAboutRefugees", "LOCALS", 1)
+	~ 
+	THEN REPLY @731 /* ~That's enough reminiscing, for now. Let's get going, Schael.~ */
+	EXIT
+END
+
 IF ~~ THEN BEGIN XAA49
 	SAY @732 /* ~Yes, at least those whose homes were not completely destroyed by the crusade. There are still many that need to be resettled.~ */
 	= @733 /* ~There are plans to settle them just east of the city. Some ankheg nests will need to be cleared, but the city planners think it's a workable solution.~ */		
 	IF ~
+		GlobalLT("XA_LC_AnythingElse48", "LOCALS", 1)
 		OR(3)
 			!Global("XA_LC_AskedAboutFirstMeeting", "LOCALS", 1)
 			!Global("XA_LC_AskedAboutAvernus", "LOCALS", 1)
 			!Global("XA_LC_AskedAboutDSFriends", "LOCALS", 1)
 	~ THEN REPLY @735 /* ~It's good that at least some progress was made.~ */
-	GOTO XAA48A //OK
+	DO ~
+		SetGlobal("XA_LC_AnythingElse48", "LOCALS", 1)
+	~
+	GOTO XAA48A
+
+	IF ~
+		Global("XA_LC_AnythingElse48", "LOCALS", 1)
+		OR(3)
+			!Global("XA_LC_AskedAboutFirstMeeting", "LOCALS", 1)
+			!Global("XA_LC_AskedAboutAvernus", "LOCALS", 1)
+			!Global("XA_LC_AskedAboutDSFriends", "LOCALS", 1)
+	~ THEN REPLY @735 /* ~It's good that at least some progress was made.~ */
+	GOTO XAA48B
 	
 	IF ~
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)

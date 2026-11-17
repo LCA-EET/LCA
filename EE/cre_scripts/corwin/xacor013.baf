@@ -8,7 +8,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_CorwinLeftPoorRep", "GLOBAL", 1)
-		Continue()
 END
 
 IF
@@ -41,7 +40,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_CorwinRepWarning", "GLOBAL", 2)
-		Continue()
 END
 
 IF

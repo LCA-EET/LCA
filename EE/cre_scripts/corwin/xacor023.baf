@@ -188,7 +188,6 @@
 		RESPONSE #100
 			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_LC_CorwinHexxat", "GLOBAL", 5)
-			Continue()
 	END
 
 	IF
@@ -289,7 +288,6 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("OHD_corwinconflict","GLOBAL",2)
-			Continue()
 	END
 
 	IF
@@ -320,7 +318,6 @@
 		RESPONSE #100
 			SetGlobal("XA_LC_DornSex", "GLOBAL", 1)
 			SetGlobal("XA_LC_ComplainDornSex", "GLOBAL", 1)
-			Continue()
 	END
 
 	IF
@@ -362,7 +359,6 @@
 		RESPONSE #100
 			SetGlobal("XA_LC_Banter_CorwinKeldInitial", "GLOBAL", 1)
 			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
-			Continue()
 	END
 
 	IF
@@ -531,7 +527,6 @@
 		RESPONSE #100
 			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_LC_CorwinHexxat", "GLOBAL", 1)
-			Continue()
 	END
 
 	IF
@@ -597,7 +592,6 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_CorwinCoverUD_Player", "GLOBAL", 2)
-			Continue()
 	END
 	//}
 
@@ -662,7 +656,6 @@
 		RESPONSE #100
 			PlaySong(1009)
 			SetGlobal("XA_LC_CorwinBit", "GLOBAL", 4)
-			Continue()
 	END
 
 	IF
@@ -682,7 +675,6 @@
 		RESPONSE #100
 			PlaySong(1009)
 			SetGlobal("XA_LC_CorwinBit", "GLOBAL", 6)
-			Continue()
 	END
 
 	IF
@@ -701,7 +693,6 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_CorwinBit", "GLOBAL", 8)
-			Continue()
 	END
 
 	IF
@@ -797,7 +788,6 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_CorwinPartySick", "GLOBAL", 1)
-			Continue()
 	END
 	
 	// Dialog R-09

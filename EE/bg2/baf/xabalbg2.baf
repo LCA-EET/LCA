@@ -42,11 +42,8 @@ IF
 	GlobalLT("XA_LC_PromptToSendLetter", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_SkieModActive", "GLOBAL",1)
 		SetGlobal("XA_LC_PromptToSendLetter", "GLOBAL", 1)
-		SetInterrupt(TRUE)
-		Continue()
 END
 
 IF
@@ -64,8 +61,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_CheckWithBrega", "GLOBAL", 1)
-		Continue()
-		
 END
 
 IF
@@ -81,8 +76,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_CheckWithBrega2", "GLOBAL", 1)
-		Continue()
-		
 END
 
 IF 
@@ -324,11 +317,7 @@ END
 			IsValidForPartyDialogue("Viconia")
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
-			////DisplayStringHead(Myself, ~DEBUG: CSNC A~)
-			SetInterrupt(TRUE)
-			Continue()
 	END
 	
 	IF 
@@ -343,11 +332,7 @@ END
 		!IsValidForPartyDialogue("Viconia")
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 2)
-			////DisplayStringHead(Myself, ~DEBUG: CSNC B~)
-			SetInterrupt(TRUE)
-			Continue()
 	END
 
 	IF

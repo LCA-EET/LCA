@@ -23,9 +23,8 @@
 		GlobalLT("XA_LC_CorwinAnomenTalk", "LOCALS", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_LC_CorwinAnomenTalk", "LOCALS", 1)
 			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
-			Continue()
+			SetGlobal("XA_LC_CorwinAnomenTalk", "LOCALS", 1)
 	END
 
 	IF
@@ -56,7 +55,6 @@
 			SetGlobalTimer("XA_LC_ViconiaBanter3Timer", "LOCALS", ONE_DAY)
 			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_LC_Banter_CorwinViconiaDay", "LOCALS", 1)
-			Continue()
 	END
 
 	IF

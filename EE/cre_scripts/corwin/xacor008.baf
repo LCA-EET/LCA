@@ -92,7 +92,6 @@
 		RESPONSE #100
 			PlaySong(1003)
 			SetGlobal("XA_LC_FlowerTalk", "LOCALS", 1)
-			Continue()
 	END
 
 	IF
@@ -114,7 +113,6 @@
 		RESPONSE #100
 			PlaySong(1001)
 			SetGlobal("XA_LC_RomanceInitTalk", "LOCALS", 1)
-			Continue()
 	END
 
 	IF
@@ -155,7 +153,6 @@
 		RESPONSE #100
 			PlaySong(1003)
 			SetGlobal("XA_LC_WealthTalk", "LOCALS", 1)
-			Continue()
 	END
 
 	IF
@@ -192,7 +189,6 @@
 		RESPONSE #100
 			SetGlobal("XA_LC_AfterSexTalk", "LOCALS", 1)
 			PlaySong(1003)
-			Continue()
 	END
 
 	IF
@@ -368,7 +364,6 @@ END
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_CorwinLeaveLich", "GLOBAL", 2)
-			Continue()
 	END
 
 	IF
@@ -469,7 +464,6 @@ END
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_CorwinLarcenyTalk", "LOCALS", 1)
-			Continue()
 	END
 
 	IF
@@ -487,7 +481,6 @@ END
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_CorwinLarcenyTalk", "LOCALS", 2)
-			Continue()
 	END
 
 	IF 
@@ -506,7 +499,6 @@ END
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_ForceTreeTalk", "GLOBAL", 1)
-			Continue()
 	END
 
 	IF
@@ -555,7 +547,6 @@ END
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_CorwinStatueTalk", "GLOBAL", 1)
-			Continue()			
 	END
 
 	IF
@@ -576,7 +567,6 @@ END
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_SlapTalk", "LOCALS", 1)
-			Continue()
 	END
 
 	IF
@@ -922,7 +912,6 @@ END
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_NebDead", "GLOBAL", 1)
-			Continue()			
 	END
 
 	IF
@@ -1005,7 +994,6 @@ END
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_CorwinVouchedDrizz", "GLOBAL", 2)
-			Continue()
 	END
 
 	IF
@@ -1046,7 +1034,6 @@ END
 	THEN
 		RESPONSE #100
 			SetGlobal("OHD_ritual_interjects","GLOBAL",1)
-			Continue()
 	END
 
 	IF
@@ -1093,7 +1080,6 @@ END
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_PlayerSoulTalk", "GLOBAL", 1)
-			Continue()
 	END
 
 	IF
@@ -1128,7 +1114,6 @@ END
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_PlayerRescueTalk", "LOCALS", 1)
-			Continue()
 	END
 	
 	IF
@@ -1146,7 +1131,6 @@ END
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_CorwinIrenicusTalk", "LOCALS", 1)
-			Continue()
 	END
 
 	IF
@@ -1186,7 +1170,6 @@ END
 			SetGlobal("XA_LC_PhaereTalk", "GLOBAL", 1)
 			SetGlobal("XA_LC_AloneWithPhaere", "GLOBAL", 1)
 			PlaySong(1001)
-			Continue()
 	END
 
 	IF
@@ -1208,7 +1191,6 @@ END
 		RESPONSE #100
 			SetGlobal("XA_LC_CorwinFirkraagDeal", "GLOBAL", 1)
 			SetGlobal("XA_LC_FirkraagDeal", "GLOBAL", 1)
-			Continue()
 	END
 
 	IF
@@ -1260,7 +1242,6 @@ END
 		RESPONSE #100
 			SetGlobal("XA_LC_BodhiDeal4", "GLOBAL", 1)
 			SetGlobal("XA_LC_CorwinBodhiDeal3", "GLOBAL", 1)
-			Continue()
 	END
 
 	IF
@@ -1369,7 +1350,6 @@ END
 			RESPONSE #100
 				SetGlobal("XA_LC_CorwinSexAfterBodhi", "GLOBAL", 2)
 				PlaySong(1001)
-				Continue()
 		END
 
 		IF
@@ -1410,7 +1390,6 @@ END
 		RESPONSE #100
 			SetGlobal("XA_LC_CorwinSex2_Init", "GLOBAL", 1)
 			PlaySong(1009) // xamu09
-			Continue()
 	END
 
 	IF
@@ -1442,7 +1421,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_MerethTalk", "GLOBAL", 2)
-		Continue()
 END
 
 IF

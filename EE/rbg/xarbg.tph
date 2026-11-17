@@ -638,7 +638,7 @@ SILENT
 			STR_VAR
 				xa_dialog = ~xaalyth~
 				xa_scriptName = ~xaalyth~
-				xa_override = ~xainitp1~
+				xa_override = ~xaalyth~
 		END
 		
 		COPY_EXISTING ~xaa1105.cre~ ~override/xamerchj.cre~ // Seven Suns Merchant merlea

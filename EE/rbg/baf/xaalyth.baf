@@ -1,4 +1,14 @@
 IF
+	See([PC])
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		SmallWait(5)
+		Enemy()
+END
+
+IF
 	See(Player1)
 	GlobalLT("XA_LC_SavedElfsong", "GLOBAL", 1)
 	OR(2)
@@ -11,11 +21,10 @@ END
 
 IF
 	See(Player1)
-	GlobalLT("XA_LC_AlythInit", "LOCALS", 1)
-	GlobalLT("XA_LC_SavedElfsong", "GLOBAL", 1)
+	!Allegiance(Myself,ENEMY)
+	NumberOfTimesTalkedTo(0)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_LC_AlythInit", "LOCALS", 1)
-		StartDialog("XAALYTH", Player1)
+		Dialogue(Player1)
 END
 

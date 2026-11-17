@@ -115,7 +115,7 @@ IF ~~ THEN BEGIN XA_ThankYou
 END
 
 IF ~
-	!Global("XA_LC_AlythIntro", "GLOBAL", 1)
+	NumberOfTimesTalkedTo(0)
 ~ THEN BEGIN XA_AlythIntro
 	SAY @0 /* ~Ah, the hero of Baldur's Gate returns, and not a moment too soon.~ */
 	
@@ -161,6 +161,16 @@ IF ~
 	GOTO XA_AgreeToInvestigate
 	
 	IF ~~ THEN REPLY @19 /* ~Not right now.~ */
+	EXIT
+END
+
+IF ~
+	Global("XA_LC_AlythIntro", "GLOBAL", 1)
+	Global("XA_LC_HelpAlyth", "GLOBAL", 1)
+~ THEN BEGIN XA_WillHelp
+	SAY @43 /*@43=~Please be careful. The Elfsong can ill afford to be known as the tavern where the hero of Baldur's Gate disappeared.~*/
+
+	IF ~~ THEN
 	EXIT
 END
 

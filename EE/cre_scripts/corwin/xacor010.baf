@@ -33,7 +33,6 @@
 		THEN
 			RESPONSE #100
 				SetGlobal("XA_LC_CorwinLeaveLich", "GLOBAL", 2)
-				Continue()
 		END
 
 		IF
@@ -55,7 +54,6 @@
 			RESPONSE #100
 				PlaySong(1001)
 				SetGlobal("XA_LC_CorwinComplainSarevok", "GLOBAL", 2)
-				Continue()
 		END
 
 		IF
@@ -76,7 +74,6 @@
 		THEN
 			RESPONSE #100
 				SetGlobal("XA_LC_SaradushDestroyed", "GLOBAL", 1)
-				Continue()
 		END
 
 		IF
@@ -109,7 +106,6 @@
 			RESPONSE #100
 				PlaySong(1009)
 				SetGlobal("XA_LC_RohmaWraith", "GLOBAL", 3)
-				Continue()
 		END
 
 		IF
@@ -219,7 +215,6 @@
 		THEN
 			RESPONSE #100
 				SetGlobal("XA_LC_CorwinCaelarJailTalk", "GLOBAL", 1)
-				Continue()
 		END
 
 		IF
@@ -251,7 +246,6 @@
 		THEN
 			RESPONSE #100
 				SetGlobal("XA_LC_CorwinCaelarHomeTalk", "GLOBAL", 1)
-				Continue()				
 		END
 
 		IF
@@ -273,7 +267,6 @@
 			RESPONSE #100
 				SetGlobal("XA_LC_CorwinBenoSoulTalk", "GLOBAL", 1)
 				PlaySong(1001)
-				Continue()
 		END
 
 		IF
@@ -308,7 +301,6 @@
 			RESPONSE #100
 				PlaySong(1009)
 				SetGlobal("XA_LC_MessageToBG", "GLOBAL", 1)
-				Continue()
 		END
 
 		IF
@@ -421,7 +413,6 @@
 		THEN
 			RESPONSE #100
 				SetGlobal("XA_LC_GeneralDeadTalk", "LOCALS", 1)
-				Continue()
 		END
 
 		IF

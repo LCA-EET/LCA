@@ -15,7 +15,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_TLR_CorwinUpset", "LOCALS", 1)
-		Continue()
 END
 
 IF
@@ -34,7 +33,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_TLR_CorwinIrenicusFight", "GLOBAL", 1)
-		Continue()
 END
 
 IF 

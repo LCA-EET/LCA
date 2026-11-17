@@ -6,6 +6,6 @@ THEN
 		FadeToColor([30.0], 0)
 		Wait(3)
 		FadeFromColor([30.0],0)
-		SetGlobal("XA_LC_HMCutscene", "GLOBAL", 3)
+		SetGlobal("XA_LC_HMCutscene", "GLOBAL", 4)
 		EndCutSceneMode()
 END

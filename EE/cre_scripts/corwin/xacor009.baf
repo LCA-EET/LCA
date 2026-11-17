@@ -32,7 +32,6 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_TroubleTalk", "GLOBAL", 1)
-			Continue()
 	END
 
 	IF
@@ -60,7 +59,6 @@
 		Global("XA_LC_AVComplimentFamily", "GLOBAL", 1)
 		Global("XA_LC_CanTalk", "LOCALS", 1)
 		IsValidForPartyDialogue("Neera")
-		
 	THEN
 		//Dialog B-66, B-79, B-82, B-83, B-84
 		RESPONSE #100
@@ -108,7 +106,6 @@
 		RESPONSE #100
 			SetGlobal("XA_LC_SoDAnxiety", "GLOBAL", 2)
 			PlaySong(1001)
-			Continue()
 	END
 
 	IF
@@ -141,7 +138,6 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_CorwinNeedSeeFamily", "GLOBAL", 2)
-			Continue()
 	END
 
 	IF
@@ -161,7 +157,6 @@
 			PlaySong(1009)
 			SetGlobal("XA_LC_AskCorwinAboutTianna", "GLOBAL", 2)
 			Wait(1)
-			Continue()
 	END
 
 	IF
@@ -183,7 +178,6 @@
 		RESPONSE #100
 			PlaySong(1003)
 			SetGlobal("XA_LC_XACS15Cutscene", "GLOBAL", 6)
-			Continue()
 	END
 
 	IF
@@ -204,7 +198,6 @@
 			ClearAllActions()
 			SetGlobal("XA_LC_XACS15Cutscene", "GLOBAL", 3)
 			FaceObject("XANEOMA")
-			Continue()
 	END
 
 	IF
